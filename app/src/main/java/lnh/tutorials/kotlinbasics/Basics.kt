@@ -29,8 +29,20 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     val myStr = "Hello World"
     var firstCharInStr = myStr[0]
     var lastCharInStr = myStr[myStr.length -1]
+    var myLength = myStr.length
+    print("First character $firstCharInStr")
 
-    print("First character " + firstCharInStr)
+    print("First character $firstCharInStr and the length of myStr is ${myStr.length}")
 
+    fun exercise() {
+        var exStr:String = "Android Masterclass"
+        val exFlat:Float = 13.37F
+        val exDouble:Double =3.14159265358979
+        var exByte:Byte = 25
+        var exShort:Short = 2020
+        var exInt:Long = 18881234567
+        var exBoolean:Boolean = true
+        var exChar:Char = 'a'
+    }
 
 }
