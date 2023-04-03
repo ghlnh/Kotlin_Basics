@@ -34,9 +34,6 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
 
     print("First character $firstCharInStr and the length of myStr is ${myStr.length}")
 
-
-
-
     fun exercise() {
         var exStr:String = "Android Masterclass"
         val exFlat:Float = 13.37F
@@ -47,8 +44,13 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
         var exBoolean:Boolean = true
         var exChar:Char = 'a'
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
+    //산술 연산자 (+, -, *, /, %)
+    var result = 5+3
+    val a = 5.0
+    val b = 3
+    var resultDouble : Double
+    resultDouble = a / b
+    print(resultDouble)
+
 }
