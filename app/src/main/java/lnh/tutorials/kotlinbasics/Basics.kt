@@ -63,4 +63,16 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     println("is -5less ${-5<3}")
     println("is5LowerEqual3 ${5 <=3}")
     println("is5GreaterEqual5 ${5 >=5}")
+
+    //대입 연산자(+=, -=, *=, /=, %=)
+    var myNum = 5
+    myNum +=3
+    myNum *=4
+    println("myNum is $myNum")
+
+    //증감 연산자(++, --)
+    myNum++
+    println("myNum is $myNum")
+    println("myNum is ${myNum++}")  //변수가 실행 된 후에 증가
+    println("myNum is ${++myNum}")  //변수가 실행 되기 전에 증가
 }
