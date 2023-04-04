@@ -53,4 +53,14 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     resultDouble = a / b
     print(resultDouble)
 
+    //비교 연산자(==, !=, <, >,<=, >=)
+    val isEqual = 5==3
+    println("isEqual is $isEqual")
+
+    //스트링 인터폴레이션
+    val isNotEqual = 5!=5
+    println("isNotEqual is $isNotEqual")
+    println("is -5less ${-5<3}")
+    println("is5LowerEqual3 ${5 <=3}")
+    println("is5GreaterEqual5 ${5 >=5}")
 }
