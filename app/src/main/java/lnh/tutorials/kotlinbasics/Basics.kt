@@ -75,4 +75,39 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     println("myNum is $myNum")
     println("myNum is ${myNum++}")  //변수가 실행 된 후에 증가
     println("myNum is ${++myNum}")  //변수가 실행 되기 전에 증가
+
+    //if문
+    var heightPerson1 = 170
+    var heightPerson2 = 189
+
+    if(heightPerson1 > heightPerson2) {
+        println("use raw force")
+    }else if(heightPerson1 == heightPerson2) {
+        println("use raw power technique 1337")
+    }else {
+        println("use your technique")
+    }
+
+    val age = 17
+    if(age>= 21){
+        println("now you may dirnk in the US")
+    }else if(age >=18){
+        println("you may vote now")
+    }else if(age >=16){
+        println("you may drive now")
+    }else{
+        println("you're too young")
+    }
+
+    var name1 = "Denis"
+
+    if(name1 == "Denis"){
+        println("Welcome home denis")
+    }else{
+        println("Who are you?")
+    }
+    var isRainy = true
+    if(isRainy)
+        println("It's Rainy")
+
 }
