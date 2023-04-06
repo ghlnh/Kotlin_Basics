@@ -110,4 +110,40 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     if(isRainy)
         println("It's Rainy")
 
+    //When
+    var season = 3
+    when(season) {
+        1 -> println("Spring")
+        2 -> println("Sumnner")
+        3 -> {
+            println("Fall")
+            println("Autumn")
+        }
+        4 -> println("Winter")
+        else -> println("Invalid Season")
+    }
+
+    var month = 3
+    when(month){
+        in 3..5 -> println("Spring")  //..은 ~라고 보면 됨
+        in 6..8 -> println("Summer")
+        in 9..11 -> println("Fall")
+        12, 1, 2 -> println("Winter")  //12..2 로 하면 downTo로 보고 12,11,...2로 범위 지정
+        else -> println("Invalid Season")
+    }
+
+    when(age) {
+        !in 0..20 -> println("now you may dirnk in the US")
+        in 18..20 -> println("you may vote now")
+        16,17 -> println("you may drive now")
+        else -> println("you're too young")
+    }
+    //Any는 다른 프로그래밍 언어에서도 객체타입으로 단순히 타입 중 아무거나 다 됨
+    var x : Any = 13.37f
+    when(x){
+        is Int -> println("$x is an Int")
+        !is Double -> println("$x is not a Double")
+        is String -> println("$x is a String")
+        else -> println("$x is none of the above")
+    }
 }
