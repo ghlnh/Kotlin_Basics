@@ -28,46 +28,46 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     //Strings
     val myStr = "Hello World"
     var firstCharInStr = myStr[0]
-    var lastCharInStr = myStr[myStr.length -1]
+    var lastCharInStr = myStr[myStr.length - 1]
     var myLength = myStr.length
     print("First character $firstCharInStr")
 
     print("First character $firstCharInStr and the length of myStr is ${myStr.length}")
 
     fun exercise() {
-        var exStr:String = "Android Masterclass"
-        val exFlat:Float = 13.37F
-        val exDouble:Double =3.14159265358979
-        var exByte:Byte = 25
-        var exShort:Short = 2020
-        var exInt:Long = 18881234567
-        var exBoolean:Boolean = true
-        var exChar:Char = 'a'
+        var exStr: String = "Android Masterclass"
+        val exFlat: Float = 13.37F
+        val exDouble: Double = 3.14159265358979
+        var exByte: Byte = 25
+        var exShort: Short = 2020
+        var exInt: Long = 18881234567
+        var exBoolean: Boolean = true
+        var exChar: Char = 'a'
     }
 
     //산술 연산자 (+, -, *, /, %)
-    var result = 5+3
+    var result = 5 + 3
     val a = 5.0
     val b = 3
-    var resultDouble : Double
+    var resultDouble: Double
     resultDouble = a / b
     print(resultDouble)
 
     //비교 연산자(==, !=, <, >,<=, >=)
-    val isEqual = 5==3
+    val isEqual = 5 == 3
     println("isEqual is $isEqual")
 
     //스트링 인터폴레이션
-    val isNotEqual = 5!=5
+    val isNotEqual = 5 != 5
     println("isNotEqual is $isNotEqual")
-    println("is -5less ${-5<3}")
-    println("is5LowerEqual3 ${5 <=3}")
-    println("is5GreaterEqual5 ${5 >=5}")
+    println("is -5less ${-5 < 3}")
+    println("is5LowerEqual3 ${5 <= 3}")
+    println("is5GreaterEqual5 ${5 >= 5}")
 
     //대입 연산자(+=, -=, *=, /=, %=)
     var myNum = 5
-    myNum +=3
-    myNum *=4
+    myNum += 3
+    myNum *= 4
     println("myNum is $myNum")
 
     //증감 연산자(++, --)
@@ -80,39 +80,39 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     var heightPerson1 = 170
     var heightPerson2 = 189
 
-    if(heightPerson1 > heightPerson2) {
+    if (heightPerson1 > heightPerson2) {
         println("use raw force")
-    }else if(heightPerson1 == heightPerson2) {
+    } else if (heightPerson1 == heightPerson2) {
         println("use raw power technique 1337")
-    }else {
+    } else {
         println("use your technique")
     }
 
     val age = 17
-    if(age>= 21){
+    if (age >= 21) {
         println("now you may dirnk in the US")
-    }else if(age >=18){
+    } else if (age >= 18) {
         println("you may vote now")
-    }else if(age >=16){
+    } else if (age >= 16) {
         println("you may drive now")
-    }else{
+    } else {
         println("you're too young")
     }
 
     var name1 = "Denis"
 
-    if(name1 == "Denis"){
+    if (name1 == "Denis") {
         println("Welcome home denis")
-    }else{
+    } else {
         println("Who are you?")
     }
     var isRainy = true
-    if(isRainy)
+    if (isRainy)
         println("It's Rainy")
 
     //When
     var season = 3
-    when(season) {
+    when (season) {
         1 -> println("Spring")
         2 -> println("Sumnner")
         3 -> {
@@ -124,7 +124,7 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     }
 
     var month = 3
-    when(month){
+    when (month) {
         in 3..5 -> println("Spring")  //..은 ~라고 보면 됨
         in 6..8 -> println("Summer")
         in 9..11 -> println("Fall")
@@ -132,15 +132,15 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
         else -> println("Invalid Season")
     }
 
-    when(age) {
+    when (age) {
         !in 0..20 -> println("now you may dirnk in the US")
         in 18..20 -> println("you may vote now")
-        16,17 -> println("you may drive now")
+        16, 17 -> println("you may drive now")
         else -> println("you're too young")
     }
     //Any는 다른 프로그래밍 언어에서도 객체타입으로 단순히 타입 중 아무거나 다 됨
-    var x : Any = 13.37f
-    when(x){
+    var x: Any = 13.37f
+    when (x) {
         is Int -> println("$x is an Int")
         !is Double -> println("$x is not a Double")
         is String -> println("$x is a String")
@@ -149,14 +149,14 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
 
     //while루프문
     var x = 1
-    while(x <=10) {
+    while (x <= 10) {
         print("$x")
         x++
     }
     println("\nwhile loop is done")
 
     var y = 100
-    while(y <=0) {
+    while (y <= 0) {
         print("$y")
         y -= 2
     }
@@ -165,18 +165,66 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
     //정수가 아니어도 조건이 맞으면 while루프문 사용 가능
     var feltTemp = "cold"
     var roomTemp = 10
-    while (feltTemp == "cold"){
+    while (feltTemp == "cold") {
         roomTemp++
-        if(roomTemp >=20){
+        if (roomTemp >= 20) {
             feltTemp = "comfy"
             println("it's comfy now")
         }
     }
 
     x = 15
-    do{
+    do {
         print("$x")
         x++
-    }while (x <= 10)
+    } while (x <= 10)
     println("\ndo while loop is done")
+
+    //for루프문
+    for (num in 1..10) {
+        print("$num")
+    }
+
+    //1부터 +1 하여 10전까지 출력
+    for (i in 1 until 10) { //for(i in 1.until(10))
+        print("$i")
+    }
+
+    //10부터 -1해서 1까지 출력
+    for (i in 10 downTo 1) {  //for(i in 10.downTo(1))
+        print("$i")
+    }
+
+    //1부터 +2해서 10전까지 출력
+    for (i in 1 until 10 step 2) {  //for(i in 1.until(10).step(2))
+        print("$i")
+    }
+
+    //반복문 연습
+    //내가 쓴 답
+    var exNum = 0
+    while (exNum <=10000){
+        exNum++
+        if (exNum == 9001){
+            println("IT'S OVER 9000!!!")
+        }
+    }
+    //정답
+    for(num in 1..10000){
+        if(num ==9001)
+            print("IT'S OVER 9000!!!")
+    }
+
+    //내가 쓴 답 (정답과 동일)
+    var humidity = "humid"
+    var humidityLevel = 80
+    while (humidity == "humid"){
+        humidityLevel -=5
+        println("humidity decreased")
+        if (humidityLevel <60){
+            humidity = "comfy"
+            println("it's comfy now")
+        }
+    }
+
 }
