@@ -161,4 +161,22 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
         y -= 2
     }
     println("\nwhile loop is done")
+
+    //정수가 아니어도 조건이 맞으면 while루프문 사용 가능
+    var feltTemp = "cold"
+    var roomTemp = 10
+    while (feltTemp == "cold"){
+        roomTemp++
+        if(roomTemp >=20){
+            feltTemp = "comfy"
+            println("it's comfy now")
+        }
+    }
+
+    x = 15
+    do{
+        print("$x")
+        x++
+    }while (x <= 10)
+    println("\ndo while loop is done")
 }
