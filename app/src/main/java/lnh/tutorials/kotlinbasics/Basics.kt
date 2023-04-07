@@ -146,4 +146,19 @@ fun main() {    //main이 앱의 시작점이여서 플레이버튼이 main에�
         is String -> println("$x is a String")
         else -> println("$x is none of the above")
     }
+
+    //while루프문
+    var x = 1
+    while(x <=10) {
+        print("$x")
+        x++
+    }
+    println("\nwhile loop is done")
+
+    var y = 100
+    while(y <=0) {
+        print("$y")
+        y -= 2
+    }
+    println("\nwhile loop is done")
 }
