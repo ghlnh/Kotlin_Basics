@@ -18,6 +18,24 @@ fun addUp(a: Int, b: Int) :Int {  //a,b는 파라미터(매개변수)
 
 fun avg(a: Double, b: Double) : Double {
     return (a+b) /2
+
+    //nullable
+    var name :String = "Denis"
+//    name = null ->Compilation ERROR
+    var nullableName :String? = "Denis"
+    println(nullableName?.toLowerCase())  //메서드에 널러블 변수를 사용 가능
+    nullableName = null
+
+    var len = name.length
+    var len2 = nullableName?.length
+    //nullable 없을 때는 아래와 같이 사용했음(구식)
+    if (nullableName !=null) {
+        var len2 = nullableName.length
+    }else{
+        null
+    }
+    nullableName?.let { println(it.length) } //let{null이 아닌 경우 실행할 코드}
+
 }
 
 
