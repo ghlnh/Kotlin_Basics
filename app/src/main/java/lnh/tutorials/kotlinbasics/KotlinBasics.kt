@@ -2,10 +2,15 @@ package lnh.tutorials.kotlinbasics
 
 fun main() {
     //변수 denis 타입 지정 안해도 코틀린에서 자동으로 Person으로 타입 지정됨
-    var denis = Person("Denis", "Panjuta")
+    var denis = Person("Denis", "Panjuta",31)
     var john = Person()
     var johnPeterson = Person(lastName = "Peterson")
-
+    denis.hobby = "to skateboard"
+    denis.age =32  //31이었던 denis age를 32로 오버라이딩
+    println("Denis is ${denis.age} years old")
+    denis.stateHobby()
+    john.hobby = "play videogames"
+    john.stateHobby()
     //연습 문제
     var SamsungGalaxyS20Ultra = MobliePhone(osName = "Android", brand = "Samsung", model = "Galaxy S20 Ultra")
     var AppleIphoneSe = MobliePhone(osName = "Ios", brand = "Apple", model = "IphoneSe")
@@ -16,12 +21,31 @@ fun main() {
 
 //constructor()는 보조 생성자로 객체 생성 시 값을 추가함
     class Person constructor(firstName: String = "John", lastName: String = "Doe"){ //디폴트 값 John Doe 지정 가능
-        //이니셜라이저: 객체 생성 시 자동으로 호출됨->객체를 시작하기 위해 사용
+        //멤버변수(프로퍼티)
+        var age : Int? = null
+        var hobby : String = "watch Nerflix"
+        var firstName :String? = null
+
+    //이니셜라이저: 객체 생성 시 자동으로 호출됨->객체를 시작하기 위해 사용
         init {
+            this.firstName = firstName
             println("Initialized a new Person object with "+
-                    "firstName = $firstName and lastName = $lastName")
+                    "firstName = $firstName and lastName = $lastName and age =$age")
         }
+    //멤버 생성자(두번째 생성자)
+    constructor(firstName: String, lastName: String, age: Int)
+        //주 생성자로부터 값을 받아 firstName="John", lastName="Doe" 설정
+                : this(firstName, lastName){
+        //객체 생성 될 때, 생성되는 해당 클래스(Person)의 age값으로 설정한다는 의미
+           this.age = age  //age=null
+                }
+
+    //멤버 함수
+    fun stateHobby(){
+        println("$firstName\'s hobby is $hobby")
     }
+
+}
 
     //연습 문제
     class MobliePhone constructor(osName : String ="Ios", brand: String ="Apple", model: String = "Iphone13"){
@@ -38,3 +62,4 @@ fun main() {
         var a = 4
         println("a is $a")  //main에서 a=5로 파라미터를 정했지만 변수 a(4)가 출력됨
     }
+
