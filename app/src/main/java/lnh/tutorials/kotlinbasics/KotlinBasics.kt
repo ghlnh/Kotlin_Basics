@@ -17,6 +17,12 @@ fun main() {
     var AppleIphone13 = MobliePhone()
 
     myFunction(5)
+
+    var myCar = Car()
+    println("brnad is :${myCar.myBrand}")
+    myCar.maxSpeed = 200
+    //getter는 private여도 실행 가능
+    println("Model is ${myCar.myModel}")
     }
 
 //constructor()는 보조 생성자로 객체 생성 시 값을 추가함
@@ -62,4 +68,30 @@ fun main() {
         var a = 4
         println("a is $a")  //main에서 a=5로 파라미터를 정했지만 변수 a(4)가 출력됨
     }
+
+//나중초기화 lateinit, setter, gettter
+class Car() {
+    lateinit var owner :String
+
+    val myBrand :String = "BMW"
+        //커스텀 getter
+    get() {
+        return field.toLowerCase()
+    }
+    var maxSpeed: Int = 250
+        //field는 getter와 setter 메서드 안에서 프로퍼티 참조를 도와주며 뒷받침함
+        get() = field
+        //value는 변수에 정해지는 값
+        set(value){
+            field = if(value >0) value else throw IllegalArgumentException("Maxspeed cannot ve less than 0")
+        }
+    var myModel :String ="M5"
+        //setter에는 private 설정이 가능
+        private set
+    init {
+        this.owner = "Frank"
+        //private로 한 클래스 내에서만 myModel의 값을 변경 할 수 있음
+        this.myModel = "M3"
+    }
+}
 
