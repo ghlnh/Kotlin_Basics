@@ -1,6 +1,33 @@
 package lnh.tutorials.kotlinbasics
 
+//데이터 클래스 선언
+data class User(val id: Long, var name: String)
+
 fun main() {
+    //데이터 클래스 객체 생성
+    val user1 = User(1, "Denis")
+
+    var name = user1.name
+    println(name)
+    user1.name = "Michael"
+    val user2 = User(1, "michael")
+
+    println(user1.equals(user2))  //user1 == user2 해도 같은 결과
+    println("User Details: $user1")  //toString 적용되서 출력 가능
+
+    //copy() 사용가능
+    val updatedUser = user1.copy(name="Denis Panjuta")  //id=1,이고 name="Denis Panjuta" 인 객체 생성
+    println(user1)
+    println(updatedUser)
+
+    println(updatedUser.component1())  //1 출력
+    println(updatedUser.component2())  //Denis Panjuta 출력
+
+    //구조 분해
+    val (id, name1) = updatedUser  //id= updatedUsser.id 가 되고 name1=updatedUser.name 이 됨
+    println("id =$id, name1=$name1")
+
+
     //변수 denis 타입 지정 안해도 코틀린에서 자동으로 Person으로 타입 지정됨
     var denis = Person("Denis", "Panjuta",31)
     var john = Person()
