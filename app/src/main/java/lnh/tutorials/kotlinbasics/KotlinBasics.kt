@@ -50,6 +50,11 @@ fun main() {
     myCar.maxSpeed = 200
     //getter는 private여도 실행 가능
     println("Model is ${myCar.myModel}")
+
+    //연습문제2
+    val iphone = MobilePhone("iOS", "Apple", "iPhone 12")
+    val galaxyS20 = MobilePhone("Android","Samsung", "Galaxy S20")
+    val mateXS = MobilePhone("Android", "Huawei", "Mate X S")
     }
 
 //constructor()는 보조 생성자로 객체 생성 시 값을 추가함
@@ -119,6 +124,20 @@ class Car() {
         this.owner = "Frank"
         //private로 한 클래스 내에서만 myModel의 값을 변경 할 수 있음
         this.myModel = "M3"
+    }
+}
+
+//연습문제2
+class MobilePhone(osName: String, brand: String, model: String){
+    private var battery : Int = 30
+    init {
+
+        println("The phone $model from $brand uses $osName as its Operating System")
+    }
+
+    fun chargeBattery(chargedBy: Int) {
+        println("Battery was at $battery and is at ${battery+chargedBy} now")
+        battery += chargedBy
     }
 }
 
