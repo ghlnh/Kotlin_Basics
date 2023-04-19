@@ -45,7 +45,7 @@ fun main() {
 
     myFunction(5)
 
-    var myCar = Car()
+    var myCar = Car("A3", "Audi")
     println("brnad is :${myCar.myBrand}")
     myCar.maxSpeed = 200
     //getter는 private여도 실행 가능
@@ -102,7 +102,11 @@ fun main() {
     }
 
 //나중초기화 lateinit, setter, gettter
-class Car() {
+class Car(s: String, s1: String) {
+    fun drive(d: Double) {
+
+    }
+
     lateinit var owner :String
 
     val myBrand :String = "BMW"
