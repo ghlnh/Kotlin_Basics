@@ -60,11 +60,7 @@ fun main(args: Array<String>){
     var audiA3 = Car2(200.0, "A3","Audi")
     var teslaS = Car2.ElectricCar2(240.0, "S-Model", "Tesla", 85.0)
 
-    // Polymorphism is the ability to treat objects
-    // with similar traits in a common way
     audiA3.drive()
-    // Only works because ElectricCar is a Subclass of Car
-    // Or alternatively works if Car was an Interface and ElectricCar would inherit from it
     teslaS.drive()
     teslaS.drive(200.0)
 }
