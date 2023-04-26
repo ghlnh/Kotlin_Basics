@@ -88,6 +88,37 @@ fun avg(a: Double, b: Double) : Double {
     //다양한 데이터 타입이 있는 배열
     val mix = arrayOf("Sun","Mon","Tues",1,2,3,Fruit("Apple",2.5))
     println(mix.contentToString())
+
+    //리스트
+    val months = listOf("January", "February", "March")
+    //어떤 타입이든 가능
+    val anyTypes = listOf(1,2,3,true,false,"String")
+    println(anyTypes.size)
+    println(months[1])
+
+    //위의 리스트는 이뮤터블 타입(수정 불가, 읽기만 가능)
+    //toMutalveList()로 뮤터블 타입 리스트로 변경
+    val additionalMonths = months.toMutableList()
+    val newMonths = arrayOf("April", "May", "June")
+    additionalMonths.addAll(newMonths)
+    additionalMonths.add("July")
+    additionalMonths.add("Augst")
+    println(additionalMonths)
+
+    //뮤터블타입리스트로 지정
+    val days1 = mutableListOf<String>("Mon","Tue","Wed")
+    //추가 가능
+    days1.add("Thu")
+    //변경 가능
+    days1[2] = "Sunday"
+    //삭제 가능
+    days1.removeAt(1)
+    //전체 삭제 또는 특정 여러 아이템 삭제 가능
+    val removeList = mutableListOf<String>("Mon","Wed")
+    days1.removeAll(removeList)
+    days1.removeAll(days)
+    println(days1)
+
 }
 data class Fruit(val name:String, val price:Double)
 
