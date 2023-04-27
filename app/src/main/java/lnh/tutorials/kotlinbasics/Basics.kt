@@ -119,8 +119,38 @@ fun avg(a: Double, b: Double) : Double {
     days1.removeAll(days)
     println(days1)
 
+    //Set
+    val fruits1 = setOf("Orange", "Apple", "Mango", "Grape", "Apple", "Orange")
+    println(fruits1.size)  //중복 제외되서 4출력
+    //println(fruits1.toSortedSet())  //알파벳 순서대로 출력
+
+    //뮤터블타입 Set
+    val newFruits = fruits1.toMutableList()
+    newFruits.add("Water Melon")
+    newFruits.add("Pear")
+    //elementAt() 으로 특정 요소 접근
+    println(newFruits.elementAt(4))  //"Water Melon"
+
+    //Map
+    val daysOfTheWeek = mapOf(1 to "Monday", 2 to "Tuesday", 3 to "Wedsday")
+    println(daysOfTheWeek[2])  //index 2 가 아니라 key 2 라 "Monday" 출력
+
+    for(key in daysOfTheWeek.keys){
+        println("$key is to ${daysOfTheWeek[key]}")
+    }
+
+    val fruitMap = mapOf("Favorite" to Fruit("Grape", 2.5)
+        , "Ok" to Fruit("Apple",1.0))
+
+    //뮤터블 타입Map
+    val newDaysOfWeek = daysOfTheWeek.toMutableMap()
+    newDaysOfWeek[4] = "Thursday"
+    newDaysOfWeek[5] = "Friday"
+
+    println(newDaysOfWeek.toSortedMap()) //key 기준으로 분류됨
 }
 data class Fruit(val name:String, val price:Double)
+
 
 
 fun myFunction(){
