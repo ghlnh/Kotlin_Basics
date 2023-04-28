@@ -148,6 +148,35 @@ fun avg(a: Double, b: Double) : Double {
     newDaysOfWeek[5] = "Friday"
 
     println(newDaysOfWeek.toSortedMap()) //key 기준으로 분류됨
+
+    //ArrayList 연습문제
+    var array =ArrayList<Double>(5)
+    array.add(1.0)
+    array.add(2.0)
+    array.add(3.0)
+    array.add(4.0)
+    array.add(5.0)
+    var arrayAvg :Double
+
+    for (i in array.indices){
+        arrayAvg += array.get(i)
+    }
+    arrayAvg = arrayAvg/array.size
+    println(arrayAvg)
+
+    //연습문제 정답
+    val myArrayList: ArrayList<Double> = ArrayList()
+    myArrayList.add(13.212312)
+    myArrayList.add(23.151232)
+    myArrayList.add(32.651553)
+    myArrayList.add(16.223817)
+    myArrayList.add(18.523999)
+    var total = 0.0
+    for (i in myArrayList){
+        total += i
+    }
+    var average = total / myArrayList.size
+    println("Avarage is " + average)
 }
 data class Fruit(val name:String, val price:Double)
 
