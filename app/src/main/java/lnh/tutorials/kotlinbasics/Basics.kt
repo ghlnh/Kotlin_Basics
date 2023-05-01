@@ -185,3 +185,18 @@ data class Fruit(val name:String, val price:Double)
 fun myFunction(){
     print("Called from myFunction")
 }
+
+//람다식
+//일반 함수
+fun addNumber (a:Int, b:Int) {
+    val add = a + b
+    println(add)
+}
+
+//람다식
+val sum: (Int, Int) -> Int = {a: Int, b: Int -> a+b}
+println(sum(10,5))
+
+//더 짧은 람다식
+val sum = {a:Int, b:Int -> println(a+b)}
+sum(10,5)
