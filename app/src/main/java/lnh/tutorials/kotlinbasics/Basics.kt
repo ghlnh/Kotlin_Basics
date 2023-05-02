@@ -200,3 +200,48 @@ println(sum(10,5))
 //더 짧은 람다식
 val sum = {a:Int, b:Int -> println(a+b)}
 sum(10,5)
+
+//중첩 클래스, 내부 클래스
+
+class OuterClass {
+    private var name:String ="Mr.X"
+    class NestedClass {
+        var description:String ="code inside nested class"
+        private var id:Int =101
+        fun foo(){
+            //print("name is ${name})  //외부 클래스의 멤버인 name에 접근 불가
+            println("Id is ${id}")
+        }
+    }
+}
+
+fun main(args: Array<String>){
+    //중첩 클래스는 반드시 초기화 되어야 함
+    println(OuterClass.NestedClass().description) //외부 클래스는 내부 클래스 접근 가능
+//code inside nested class 출력됨
+
+    var obj = OuterClass.NestedClass()  //객체 생성
+    obj.foo() //Id is 101 출력됨
+}
+
+class OuterClass1 {
+    private var name1:String ="Mr.X"
+    inner class InnerClass {
+        var description1:String ="code inside inner class"
+        private var id1:Int =101
+        fun foo1(){
+            print("name is ${name1}")  //외부 클래스의 private멤버인 name에 접근 가능
+            println("Id is ${id1}")
+        }
+    }
+}
+
+fun main(args: Array<String>){
+    //중첩 클래스는 반드시 초기화 되어야 함
+    println(OuterClass1.InnerClass().description1) //외부 클래스는 내부 클래스 접근 가능
+//code inside nested class 출력됨
+
+    var obj = OuterClass1.InnerClass()  //객체 생성
+    obj.foo1() //name is Mr.X Id is 101 출력됨
+}
+
