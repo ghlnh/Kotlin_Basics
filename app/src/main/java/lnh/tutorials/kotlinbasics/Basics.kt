@@ -245,3 +245,13 @@ fun main(args: Array<String>){
     obj.foo1() //name is Mr.X Id is 101 출력됨
 }
 
+//접근제한자
+
+/*
+- public : 모두 공개 및 접근 가능(기본 접근 제한자)
+- private: 선언된 블록에서만 접근 가능. 해당 파일(`.kt`) 또는 클래스 내에서만 접근 가능
+- protected: 해당 파일(`.kt`) 또는 클래스 내에서와 자식 클래스에서는 접근이 가능하다. `top-level`에서는 선언할 수 없다. →패키지에서 선언 불가
+
+open protected면 오버라이딩 가능
+
+- **internal**: 시행된 모듈안에서만 필드가 보이게 함→모든 필드는 internal로 선언되고, 시행된 모듈 안에서만 접근 가능⇒같은 파일에서 접근 가능*/
