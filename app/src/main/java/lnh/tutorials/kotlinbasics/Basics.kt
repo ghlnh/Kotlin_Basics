@@ -255,3 +255,28 @@ fun main(args: Array<String>){
 open protected면 오버라이딩 가능
 
 - **internal**: 시행된 모듈안에서만 필드가 보이게 함→모든 필드는 internal로 선언되고, 시행된 모듈 안에서만 접근 가능⇒같은 파일에서 접근 가능*/
+
+fun main2(args: Array<String>){
+    val obj:Any? = null
+    val str:String = obj as String  //Any?->String 으로 불안전형변환
+    println(str)  //calss cast exception (non-null이 null 이 될 수 없다는 오류)
+}
+
+//아래와 같은 경우에도 calss cast exception 발생
+val obj:Any = 123  //Integer
+val str:String = abj as String  //Integer->String으로 변환X(타입 변환이나 파싱 필요)
+
+//널러블이여야지 형변환이 가능해짐
+fun main(args:Array<String>){
+    val obj:Any? = "String unsafe cast"
+    val str:String? = obj as String?  //Ok
+    println(str)  //String unsafe cast 출력됨
+}
+
+fun main(args:Array<String>){
+    val location:Any = "Kotiln"
+    val safeString:String? =location as? String
+    val safeInt:Int? = location as? Int
+    println(safeString)  //Kotiln 출력
+    println(safeInt)  //null 출력
+}
