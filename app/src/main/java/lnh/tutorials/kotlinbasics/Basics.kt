@@ -279,4 +279,28 @@ fun main(args:Array<String>){
     val safeInt:Int? = location as? Int
     println(safeString)  //Kotiln 출력
     println(safeInt)  //null 출력
+
+
+    //예외 처리
+    try{
+        val data = 10/5
+        println(data)
+    } catch(e:NullPointerException){
+        println(e)
+    }finally{
+        println("finally block always excutes")
+    }
+    println("below code...")
+
+    try{
+        val data = 10/5
+        println(data)
+    } catch(e:NullPointerException){
+        println(e)
+    }finally{
+        println("finally block always excutes")
+    }
+    println("below code...")
+}
+}
 }
